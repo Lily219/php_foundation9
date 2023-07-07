@@ -35,7 +35,7 @@ class Person{
     }
     public function addAge(): void {
       echo '誕生日が来ました。';
-      $this->age = 21;
+      $this->age += 1;
     }
 }
 

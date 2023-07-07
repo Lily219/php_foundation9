@@ -35,25 +35,34 @@ require 'lesson1.php';
     public float $height;
     public float $weight;
 
-    // function __construct($name, $age, $gender, $height, $weight){
-    //     $this->name = $name;
-    //     $this->age = $age;
-    //     $this->gender = $gender;
-    //     $this->getHeight = $height;
-    //     $this->getWeight = $weight;
-    // }
+    function __construct($name, $age, $gender, $height, $weight){
+      parent::__construct($name, $age, $gender);
+      $this->height = $height;
+      $this->weight = $weight;
+    }
+
+    function calculateStandardWeight() :float{
+        return $this->height * $this->height * 22;
+    }
+
+    function getHeight(){
+         return $this->weight;
+    }
+
+    function  getWeight(){
+         return $this->weight;
+    }
+
+
 
     public function average(){
-        return $this->name.'さんの身長は'. $this->getHeight.'mなので平均体重は'.$this->calculateStandardWeight."kgです。現在の体重は".$this->getWeight.'kgです。';
+        return $this->name.'さんの身長は'. $this->height.'mなので平均体重は'.$this->height * $this->height * 22 ."kgです。現在の体重は".$this->weight.'kgです。';
     }
 
  }
 
- $sato = new Patient('佐藤', 20, '女性',);
- $sato->getHeight = 1.8;
- $sato->getWeight = 70;
- $sato->calculateStandardWeight = $sato->getHeight * $sato->getHeight * 22;
-
+ $tanaka = new Patient('佐藤', 20, '女性', 1.8, 70);
+ 
  echo '<br>';
- echo $sato->average();
+ echo $tanaka->average();
  
